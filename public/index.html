@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miku</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/omnibox.css">
+    <link rel="stylesheet" href="/styles/settings.css">
+    <link rel="shortcut icon" href="/assets/wonderhoy.png" type="image/x-icon">
+
+    <script src="/s/scramjet.all.js"></script>
+    <script src="/b/index.js" defer></script>
+    <script src="/e/index.js" defer></script>
+    <script src="/l/index.js" defer></script>
+    <script src="/u/uv.bundle.js" defer></script>
+    <script src="/u/uv.config.js" defer></script>
+    <script src="/scripts/index.js" defer></script>
+    <script src="/scripts/omnibox.js" defer></script>
+    <script src="/scripts/settings.js" defer></script>
+</head>
+
+<body>
+    <div class="main-container">
+        <img src="/assets/logo.png" alt="Hatsune Miku" class="logo">
+        
+        <form id="kk-form">
+            <div class="omnibox-container">
+                <img src="/assets/wonderhoy.png" alt="Wonderhoy" class="wonderhoy-image">
+
+                <div class="omnibox-wrapper">
+                    <div class="resize-handle resize-handle-left"></div>
+                    <input id="kk-address" type="text" placeholder="Search or enter a URL..." autocomplete="off" />
+                    <div class="resize-handle resize-handle-right"></div>
+
+                    <div id="history-dropdown" class="history-dropdown">
+                        <div class="history-header">
+                            <span>Recent</span>
+                            <button type="button" id="clear-history" class="clear-history">Clear</button>
+                        </div>
+
+                        <div id="history-list" class="history-list"></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <button class="settings-icon" id="settings-icon">
+        <i class="fas fa-cog"></i>
+    </button>
+
+    <iframe style="display: none" id="kk-frame"></iframe>
+
+    <div class="copyright">
+        (c) <a href="https://github.com/scaratech" target="_blank">Scaratek</a> 2025 | <a href="https://github.com/scaratech/mikucore" target="_blank">Repo</a>
+    </div>
+
+    <div id="settings-overlay">
+        <div class="settings-panel">
+            <h3>Settings</h3>
+            
+            <div class="setting-group">
+                <label><strong>Core:</strong></label>
+
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="core-uv" name="core" value="uv">
+                        <label for="core-uv">UV</label>
+                    </div>
+
+                    <div class="radio-item">
+                        <input type="radio" id="core-sj" name="core" value="sj">
+                        <label for="core-sj">SJ</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="setting-group">
+                <label><strong>Transport:</strong></label>
+                
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="transport-epoxy" name="transport" value="/e/index.mjs">
+                        <label for="transport-epoxy">Epoxy</label>
+                    </div>
+
+                    <div class="radio-item">
+                        <input type="radio" id="transport-libcurl" name="transport" value="/l/index.mjs">
+                        <label for="transport-libcurl">Libcurl</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="setting-group">
+                <label><strong>Wisp URL:</strong></label>
+
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="wisp-default" name="wisp" value="default">
+                        <label for="wisp-default">Default</label>
+                    </div>
+
+                    <div class="radio-item">
+                        <input type="radio" id="wisp-custom" name="wisp" value="custom">
+                        <label for="wisp-custom">Custom:</label>
+                        <input type="text" id="wisp-custom-url" placeholder="wss://example.com/wisp/">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="settings-buttons">
+                <button class="btn" id="save-settings">Save</button>
+                <button class="btn secondary" id="close-settings">Close</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

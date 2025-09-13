@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600&display=swap");
+
+:root {
+	--miku-teal: #00FFD4;
+	--miku-pink: #FF1493;
+	--miku-dark: #141428;
+	--miku-darker: #101020;
+	--miku-light: #39ffef;
+}
+
+body {
+	font-family: "Source Code Pro", "SF Mono", "Monaco", "Inconsolata", monospace;
+	margin: 0;
+	background: 
+		radial-gradient(circle at 20% 80%, rgba(255, 20, 147, 0.015) 0%, transparent 50%),
+		radial-gradient(circle at 80% 20%, rgba(0, 255, 212, 0.01) 0%, transparent 50%),
+		radial-gradient(circle at 40% 40%, rgba(255, 20, 147, 0.01) 0%, transparent 50%),
+		linear-gradient(135deg, var(--miku-dark) 0%, var(--miku-darker) 100%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	color: #ffffff;
+	font-weight: 400;
+}
+
+.main-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	z-index: 2;
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+
+.logo {
+	width: 200px;
+	height: auto;
+	margin-bottom: 24px;
+}
+
+#kk-frame {
+	border: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--miku-dark);
+	z-index: 10;
+}
+
+#kk-error {
+	color: var(--miku-pink);
+	white-space: pre-wrap;
+	text-align: center;
+	margin-top: 20px;
+}
+
+#kk-error-code {
+	font-size: 12px;
+	opacity: 0.8;
+	font-family: inherit;
+	text-align: center;
+}
+
+.wonderhoy-image {
+	width: 50px;
+	height: 50px;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 5;
+}
+
+.copyright {
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+	font-size: 12px;
+	color: rgba(255, 255, 255, 0.6);
+	z-index: 3;
+}
+
+.copyright a {
+	color: var(--miku-teal);
+	text-decoration: none;
+	transition: all 0.2s ease;
+}
+
+.copyright a:hover {
+	color: var(--miku-light);
+	text-shadow: 0 0 8px rgb(0, 255, 212);
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(0, 255, 212, 0.5);
+	border-radius: 4px;
+	transition: all 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(0, 255, 212, 0.75);
+}
+
+@media (max-width: 768px) {
+	.main-container { padding: 0 15px; }
+	.logo { width: 150px; margin-bottom: 20px; }
+}
+
+@media (max-width: 480px) {
+	.main-container { padding: 0 10px; }
+	.logo { width: 130px; margin-bottom: 18px; }
+}
