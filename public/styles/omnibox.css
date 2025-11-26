@@ -24,29 +24,6 @@
 	align-items: center;
 }
 
-.resize-handle {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	width: 15px;
-	cursor: ew-resize;
-	z-index: 11;
-	background: transparent;
-	transition: all 0.2s ease;
-}
-
-.resize-handle-left {
-	left: -7px;
-}
-
-.resize-handle-right {
-	right: -7px;
-}
-
-.resize-handle:hover {
-	background: linear-gradient(90deg, transparent, rgba(0, 255, 212, 0.15), transparent);
-}
-
 #kk-address {
 	background: rgba(255, 255, 255, 0.05);
 	font-family: inherit;

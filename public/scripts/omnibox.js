@@ -1,41 +1,9 @@
 const historyDropdown = document.getElementById("history-dropdown");
 const historyList = document.getElementById("history-list");
 const clearHistoryBtn = document.getElementById("clear-history");
-const leftHandle = document.querySelector(".resize-handle-left");
-const rightHandle = document.querySelector(".resize-handle-right");
 const omniboxWrapper = document.querySelector(".omnibox-wrapper");
 
-let isResizing = false;
-let startX = 0;
-let startWidth = 0;
 const MAX_HISTORY_ITEMS = 10;
-
-function initResize(e) {
-    isResizing = true;
-    startX = e.clientX;
-    startWidth = omniboxWrapper.offsetWidth;
-    document.body.style.cursor = "ew-resize";
-
-    e.preventDefault();
-}
-
-function doResize(e) {
-    if (!isResizing) return;
-
-    const newWidth = Math.max(300, Math.min(1200, startWidth + (e.clientX - startX)));
-    omniboxWrapper.style.width = newWidth + "px";
-}
-
-function stopResize() {
-    isResizing = false;
-    document.body.style.cursor = "default";
-}
-
-leftHandle.addEventListener("mousedown", (e) => initResize(e, 'left'));
-rightHandle.addEventListener("mousedown", (e) => initResize(e, 'right'));
-
-document.addEventListener("mousemove", doResize);
-document.addEventListener("mouseup", stopResize);
 
 function getHistory() {
     const history = localStorage.getItem("miki-history");
